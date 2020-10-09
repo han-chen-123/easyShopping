@@ -1,0 +1,95 @@
+
+<html>
+<head>
+    <title> Left Frame </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function expand(section) {
+            document.getElementById("level2").src="image/" + section + ".png";
+            document.getElementById("level2").useMap="#"+section+"_map";
+        }
+
+        function sendProductId(id) {
+            document.getElementById("product_id").value = id;
+            document.hiddenform.submit();
+        }
+    </script>
+</head>
+<body style="background-color:bisque;">
+
+    <p class="image"><img name="level1" id="level1" src="image/level1.png" alt="level1" usemap="#map"></p>
+
+    <map id="map" name="map">
+        <area shape="rect" coords="10,210,130,270" onmouseover="expand('frozenfood')">
+        <area shape="rect" coords="150,210,270,270" onmouseover="expand('freshfood')">
+        <area shape="rect" coords="295,210,415,270" onmouseover="expand('beverages')">
+        <area shape="rect" coords="440,210,560,270" onmouseover="expand('homehealth')">
+        <area shape="rect" coords="580,210,700,270" onmouseover="expand('petfood')">
+    </map>
+
+
+    <p class="image"><img name="level2" id="level2" usemap="#frozenfood_map"></p>
+
+    <map id="frozenfood_map" name="frozenfood_map">
+        <area shape="rect" coords="10,200,130,260" onclick="sendProductId(1002)">
+        <area shape="rect" coords="150,200,270,260" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="295,200,415,260" onclick="sendProductId(1003)">
+        <area shape="rect" coords="440,200,560,260" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="95,370,215,435" onclick="sendProductId(1000)">
+        <area shape="rect" coords="230,370,350,435" onclick="sendProductId(1001)">
+        <area shape="rect" coords="380,370,500,435" onclick="sendProductId(1004)">
+        <area shape="rect" coords="520,370,640,435" onclick="sendProductId(1005)">
+    </map>
+
+    <map id="freshfood_map" name="freshfood_map">
+        <area shape="rect" coords="10,195,100,255" onclick="sendProductId(3002)">
+        <area shape="rect" coords="110,195,200,255" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="210,195,310,255" onclick="sendProductId(3003)">
+        <area shape="rect" coords="320,195,415,255" onclick="sendProductId(3004)">
+        <area shape="rect" coords="425,195,520,255" onclick="sendProductId(3006)">
+        <area shape="rect" coords="530,195,625,255" onclick="sendProductId(3007)">
+        <area shape="rect" coords="630,195,725,255" onclick="sendProductId(3005)">
+        <area shape="rect" coords="50,475,170,430" onclick="sendProductId(3000)">
+        <area shape="rect" coords="190,475,315,430" onclick="sendProductId(3001)">
+    </map>
+
+    <map id="beverages_map" name="beverages_map">
+        <area shape="rect" coords="70,200,190,260" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="335,200,460,260" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="590,200,715,260" onclick="sendProductId(4005)">
+        <area shape="rect" coords="30,370,130,425" onclick="sendProductId(4003)">
+        <area shape="rect" coords="135,370,230,425" onclick="sendProductId(4004)">
+        <area shape="rect" coords="240,370,335,425" onclick="sendProductId(4000)">
+        <area shape="rect" coords="345,370,440,425" onclick="sendProductId(4001)">
+        <area shape="rect" coords="450,370,545,425" onclick="sendProductId(4002)">
+    </map>
+
+    <map id="homehealth_map" name="homehealth_map">
+        <area shape="rect" coords="10,195,130,250" onclick="sendProductId(2002)">
+        <area shape="rect" coords="150,195,275,250" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="295,195,420,250" onclick="sendProductId(2005)">
+        <area shape="rect" coords="440,195,560,250" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="580,195,705,250" onclick="sendProductId(2006)">
+        <area shape="rect" coords="90,370,215,430" onclick="sendProductId(2000)">
+        <area shape="rect" coords="235,370,355,430" onclick="sendProductId(2001)">
+        <area shape="rect" coords="380,370,505,430" onclick="sendProductId(2003)">
+        <area shape="rect" coords="525,370,645,430" onclick="sendProductId(2004)">
+    </map>
+
+    <map id="petfood_map" name="petfood_map">
+        <area shape="rect" coords="155,190,275,255" onclick="sendProductId(5002)">
+        <area shape="rect" coords="295,190,420,255" onclick="sendProductId(5003)">
+        <area shape="rect" coords="440,190,560,255" onclick="alert('Please select a quantity')">
+        <area shape="rect" coords="580,190,700,255" onclick="sendProductId(5004)">
+        <area shape="rect" coords="385,370,505,430" onclick="sendProductId(5001)">
+        <area shape="rect" coords="525,370,645,430" onclick="sendProductId(5000)">
+    </map>
+
+    <p>
+        <form name="hiddenform" action="rightTop.php" target="rightTop" method="GET">
+            <input type="hidden" id="product_id" name="product_id" value=6666>
+        </form>
+    </p>
+
+</body>
+</html>
